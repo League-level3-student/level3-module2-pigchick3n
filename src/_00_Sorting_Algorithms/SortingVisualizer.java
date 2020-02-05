@@ -1,6 +1,6 @@
 package _00_Sorting_Algorithms;
 
-import java.awt.Color;
+ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
 import java.util.Random;
