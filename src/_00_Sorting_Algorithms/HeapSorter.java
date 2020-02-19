@@ -64,9 +64,10 @@ public class HeapSorter extends Sorter {
 			array[largest] = array[i];
 			array[i] = x;
 			display.updateDisplay();
+			heapSort(array, n, largest, display);
 		}
-		heapSort(array, n, largest, display);
-		// then swap the array elements at i and largest.
+		
+		// then swap the array elements at i and largest.7 
 		// Also, call the heapSort method with n and largest
 	}
 
