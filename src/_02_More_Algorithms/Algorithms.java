@@ -35,12 +35,22 @@ public class Algorithms {
 		String longest = "";
 		int characters = 0;
 		for (int i = 0; i < words.size(); i++) {
-			if (words.get(i).length() >= characters) {
+			if (words.get(i).length() > characters) {
 				characters = words.get(i).length();
 				longest = words.get(i);
 			}
 		}
 		return longest;
+	
+}
+	public static boolean containsSOS(List<String> message) {
+		boolean doesContain = false;
+		
+			if (message.contains("... --- ...")) {
+				doesContain = true;
+			}
+		
+		return doesContain;
 	
 }
 }
