@@ -46,7 +46,7 @@ public class Algorithms {
 	public static boolean containsSOS(List<String> message) {
 		boolean doesContain = false;
 		
-			if (message.contains("... --- ...")) {
+			if (message.indexOf("... --- ...")!= -1) {
 				doesContain = true;
 			}
 		
