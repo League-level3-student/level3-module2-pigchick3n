@@ -46,11 +46,32 @@ public class Algorithms {
 	public static boolean containsSOS(List<String> message) {
 		boolean doesContain = false;
 		
-			if (message.indexOf("... --- ...")!= -1) {
+			if (message.indexOf(" ... --- ... ")!= -1) {
 				doesContain = true;
 			}
 		
 		return doesContain;
+	
+}
+	public static double[] sortScores(List<Double> grades) {
+		double[] scores = null;
+		for (int i = 0; i < grades.size(); i++) {
+			scores[i] = grades.get(i);
+		}
+		
+		for (int i = 0; i < scores.length; i++) {
+			for (int j = 0; j < scores.length - 1; j++) {
+				if (scores[j] > scores[j + 1]) {
+					double small = scores[j + 1];
+					double large = scores[j];
+					scores[j] = small;
+					scores[j + 1] = large;
+				}
+			}
+		}
+			
+		
+		return scores;
 	
 }
 }
