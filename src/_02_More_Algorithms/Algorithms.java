@@ -1,5 +1,6 @@
 package _02_More_Algorithms;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Algorithms {
@@ -53,25 +54,50 @@ public class Algorithms {
 		return doesContain;
 	
 }
-	public static double[] sortScores(List<Double> grades) {
-		double[] scores = null;
-		for (int i = 0; i < grades.size(); i++) {
-			scores[i] = grades.get(i);
-		}
-		
-		for (int i = 0; i < scores.length; i++) {
-			for (int j = 0; j < scores.length - 1; j++) {
-				if (scores[j] > scores[j + 1]) {
-					double small = scores[j + 1];
-					double large = scores[j];
-					scores[j] = small;
-					scores[j + 1] = large;
+//	public static List<Double> sortScores(List<Double> grades) {
+//		List<Double> scores = new ArrayList<>(grades.size());
+//		for (int i = 0; i < grades.size(); i++) {
+//			scores.set(i, grades.get(i));
+//		}
+//		
+//		for (int i = 0; i < scores.size(); i++) {
+//			for (int j = 0; j < scores.size() - 1; j++) {
+//				if (scores.get(j) > scores.get(j+1)) {
+//					double small = scores.get(j + 1);
+//					double large = scores.get(j);
+//					scores.set(j, small);
+//					scores.set(j+1, large);
+//				}
+//			}
+//		}
+//			
+//		
+//		return scores;
+//	
+//}
+	
+	public static Object sortDNA(List<String> unsortedSequences) {
+		for (int i = 0; i <unsortedSequences.size(); i++) {
+			for (int j = 0; j < unsortedSequences.size()-1; j++) {
+				if(unsortedSequences.get(j).length()>unsortedSequences.get(j+1).length()) {
+					String temp = unsortedSequences.get(j); 
+					unsortedSequences.set(j, unsortedSequences.get(j+1)); 
+					unsortedSequences.set(j+1,temp); 
 				}
 			}
 		}
-			
-		
-		return scores;
-	
-}
+		return unsortedSequences;
+	}
+	public static List<String> sortWords(List<String> words) {
+		for (int i = 0; i < words.size(); i++) {
+			for (int s = 0; s < words.size()-1; s++) {
+				if(words.get(s).compareTo(words.get(s+1))>0) {
+					String x = words.get(s); 
+					words.set(s, words.get(s+1)); 
+					words.set(s+1,x); 
+				}
+			}
+		}
+		return words;
+	}
 }
